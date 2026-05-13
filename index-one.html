@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ideal Coffee Machines — Premium Commercial Coffee Solutions</title>
+  <meta name="description" content="Commercial coffee machines for cafes, hotels, offices & restaurants. IoT-connected, precision-crafted, always reliable." />
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<!-- ══ SVG SPRITE ══ -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <symbol id="ic-coffee" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 0 010 8h-1"/><path d="M3 8h14v9a4 4 0 01-4 4H7a4 4 0 01-4-4V8z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></symbol>
+  <symbol id="ic-wrench" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></symbol>
+  <symbol id="ic-wifi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0114.08 0"/><path d="M1.42 9a16 16 0 0121.16 0"/><path d="M8.53 16.11a6 6 0 016.95 0"/><circle cx="12" cy="20" r="1" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="ic-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+  <symbol id="ic-pen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></symbol>
+  <symbol id="ic-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
+  <symbol id="ic-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></symbol>
+  <symbol id="ic-hotel" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></symbol>
+  <symbol id="ic-briefcase" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></symbol>
+  <symbol id="ic-utensils" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="2" x2="3" y2="22"/><path d="M7 2v4a4 4 0 008 0V2"/><line x1="11" y1="2" x2="11" y2="22"/></symbol>
+  <symbol id="ic-star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></symbol>
+  <symbol id="ic-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></symbol>
+  <symbol id="ic-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></symbol>
+  <symbol id="ic-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 011.07 2.22 2 2 0 013.06 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></symbol>
+  <symbol id="ic-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></symbol>
+  <symbol id="ic-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="ic-instagram" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></symbol>
+  <symbol id="ic-linkedin" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></symbol>
+  <symbol id="ic-youtube" viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></symbol>
+  <symbol id="ic-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></symbol>
+  <symbol id="ic-tent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 21L12 3l8.5 18H3.5z"/><path d="M9 21l3-8 3 8"/></symbol>
+  <symbol id="ic-store" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h20l-2 7H4L2 3z"/><rect x="4" y="10" width="16" height="11" rx="1"/><path d="M9 10v11m6-11v11"/></symbol>
+</svg>
+
+<!-- ══ NAVBAR ══ -->
+<header class="navbar" id="navbar">
+  <div class="container nav-inner">
+    <a href="#" class="logo">
+      <img src="https://idealcoffeemachines.com/images/logo-light.png" alt="Ideal Coffee Machines" class="logo-img" />
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#products">Machines</a>
+      <a href="#industries">Industries</a>
+      <a href="#why-us">Why Us</a>
+      <a href="#testimonials">Clients</a>
+      <a href="#contact" class="nav-cta">Get a Quote</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ══ HERO ══ -->
+<section class="hero" id="hero">
+  <div class="hero-grain"></div>
+  <div class="hero-overlay"></div>
+  <!-- Decorative elements -->
+  <div class="hero-ring r1"></div>
+  <div class="hero-ring r2"></div>
+  <div class="hero-accent-line al1"></div>
+  <div class="hero-accent-line al2"></div>
+
+  <div class="container hero-layout">
+    <div class="hero-left">
+      <div class="hero-badge reveal">
+        <span class="badge-pip"></span>
+        Trusted by 200+ Businesses Across India
+      </div>
+      <h1 class="hero-h1 reveal reveal-d1">
+        Brew<br />Excellence.<br /><em>Power Your<br />Business.</em>
+      </h1>
+      <p class="hero-p reveal reveal-d2">
+        Premium commercial coffee machines engineered for cafes, hotels, offices &amp; restaurants. IoT-connected, precision-crafted, always reliable.
+      </p>
+      <div class="hero-btns reveal reveal-d3">
+        <a href="#contact" class="btn btn-red">
+          Get a Free Quote <svg width="15" height="15"><use href="#ic-arrow"/></svg>
+        </a>
+        <a href="#products" class="btn btn-ghost">Explore Machines</a>
+      </div>
+    </div>
+
+    <div class="hero-right reveal reveal-d2">
+      <div class="hero-img-wrap">
+        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=750&q=85&fit=crop" alt="Premium espresso machine" />
+        <!-- Corner brackets -->
+        <span class="hc tl"></span>
+        <span class="hc tr"></span>
+        <span class="hc bl"></span>
+        <span class="hc br"></span>
+      </div>
+      <!-- Floating cards -->
+      <div class="hf-iot">
+        <div class="hf-icon"><svg width="14" height="14"><use href="#ic-wifi"/></svg></div>
+        <div>
+          <b>IoT Connected</b>
+          <span>Real-time monitoring</span>
+        </div>
+      </div>
+      <div class="hf-stat">
+        <span class="hfs-n">200<sup>+</sup></span>
+        <span class="hfs-l">Happy Clients</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stats bar -->
+  <!-- <div class="hero-statsbar reveal reveal-d4">
+    <div class="container hsb-inner">
+      <div class="hstat">
+        <span class="hstat-n" data-target="200">0</span><sup>+</sup>
+        <span class="hstat-l">Happy Clients</span>
+      </div>
+      <div class="hsep"></div>
+      <div class="hstat">
+        <span class="hstat-n" data-target="8">0</span><sup>+</sup>
+        <span class="hstat-l">Years Expertise</span>
+      </div>
+      <div class="hsep"></div>
+      <div class="hstat">
+        <span class="hstat-n">24</span><sup>/7</sup>
+        <span class="hstat-l">Customer Support</span>
+      </div>
+      <div class="hsep"></div>
+      <div class="hstat">
+        <span class="hstat-n" data-target="15">0</span><sup>+</sup>
+        <span class="hstat-l">Machine Models</span>
+      </div>
+    </div>
+  </div> -->
+</section>
+
+<!-- ══ TRUSTED BY ══ -->
+<section class="trusted">
+  <div class="container trusted-hd">
+    <span class="trusted-label">Trusted by India's Finest Brands</span>
+    <span class="trusted-rule"></span>
+  </div>
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <span class="bpill"><svg width="11" height="11"><use href="#ic-coffee"/></svg> Taj Hotels</span>
+      <span class="bpill"><svg width="11" height="11"><use href="#ic-hotel"/></svg> ITC Hotels</span>
+      <span class="bpill"><svg width="11" height="11"><use href="#ic-coffee"/></svg> Blue Tokai</span>
+      <span class="bpill"><svg width="11" height="11"><use href="#ic-coffee"/></svg> Third Wave Coffee</span>
+      <span class="bpill"><svg width="11" height="11"><use href="#ic-briefcase"/></svg> WeWork India</span>
+      <span class="bpill"><svg width="11" height="11"><use href="#ic-coffee"/></svg> Dyu Art Café</span>
+      <span class="bpill"><svg width="11" height="11"><use href="#ic-hotel"/></svg> Oberoi Group</span>
+      <span class="bpill"><svg width="11" height="11"><use href="#ic-coffee"/></svg> Monkey Brew</span>
+      <span class="bpill"><svg width="11" height="11"><use href="#ic-hotel"/></svg> Radisson Hotels</span>
+      <span class="bpill"><svg width="11" height="11"><use href="#ic-coffee"/></svg> Casa Playa</span>
+      <!-- dup -->
+      <span class="bpill"><svg width="11" height="11"><use href="#ic-coffee"/></svg> Taj Hotels</span>
+      <span class="bpill"><svg width="11" height="11"><use href="#ic-hotel"/></svg> ITC Hotels</span>
+      <span class="bpill"><svg width="11" height="11"><use href="#ic-coffee"/></svg> Blue Tokai</span>
+      <span class="bpill"><svg width="11" height="11"><use href="#ic-coffee"/></svg> Third Wave Coffee</span>
+      <span class="bpill"><svg width="11" height="11"><use href="#ic-briefcase"/></svg> WeWork India</span>
+      <span class="bpill"><svg width="11" height="11"><use href="#ic-coffee"/></svg> Dyu Art Café</span>
+      <span class="bpill"><svg width="11" height="11"><use href="#ic-hotel"/></svg> Oberoi Group</span>
+      <span class="bpill"><svg width="11" height="11"><use href="#ic-coffee"/></svg> Monkey Brew</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PRODUCTS ══ -->
+<section class="products" id="products">
+  <div class="container">
+    <div class="sec-hd reveal">
+      <span class="eyebrow">Our Machines</span>
+      <h2>Commercial Coffee Machines<br /><em>Built for Volume &amp; Precision</em></h2>
+      <p>Every machine engineered for professional environments — from fast-paced cafes to luxury hotel lobbies.</p>
+    </div>
+    <div class="products-grid">
+
+      <div class="pcard reveal">
+        <div class="pcard-img">
+          <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=600&q=80&fit=crop" alt="Pro Espresso" loading="lazy"/>
+          <span class="pbadge">Best Seller</span>
+        </div>
+        <div class="pcard-body">
+          <h3>Pro Espresso Series</h3>
+          <p>Dual-boiler precision espresso with E61 group heads. Flawless extraction every single shot.</p>
+          <ul class="speclist">
+            <li><svg width="12" height="12"><use href="#ic-check"/></svg> E61 Group Heads</li>
+            <li><svg width="12" height="12"><use href="#ic-check"/></svg> PID Temperature Control</li>
+            <li><svg width="12" height="12"><use href="#ic-check"/></svg> Dual Boiler System</li>
+          </ul>
+          <a href="#contact" class="plink">Enquire Now <svg width="12" height="12"><use href="#ic-arrow"/></svg></a>
+        </div>
+      </div>
+
+      <div class="pcard reveal reveal-d1">
+        <div class="pcard-img">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80&fit=crop" alt="Smart Bean-to-Cup" loading="lazy"/>
+          <span class="pbadge red">IoT Enabled</span>
+        </div>
+        <div class="pcard-body">
+          <h3>Smart Bean-to-Cup</h3>
+          <p>Fully automatic with IoT connectivity. Monitor usage and customise brews remotely from anywhere.</p>
+          <ul class="speclist">
+            <li><svg width="12" height="12"><use href="#ic-check"/></svg> App Connected</li>
+            <li><svg width="12" height="12"><use href="#ic-check"/></svg> Auto Cleaning Cycle</li>
+            <li><svg width="12" height="12"><use href="#ic-check"/></svg> Multi-Brew Profiles</li>
+          </ul>
+          <a href="#contact" class="plink">Enquire Now <svg width="12" height="12"><use href="#ic-arrow"/></svg></a>
+        </div>
+      </div>
+
+      <div class="pcard reveal reveal-d2">
+        <div class="pcard-img">
+          <img src="https://images.unsplash.com/photo-1507133750040-4a8f57021571?w=600&q=80&fit=crop" alt="High Volume" loading="lazy"/>
+        </div>
+        <div class="pcard-body">
+          <h3>High-Volume Commercial</h3>
+          <p>For hotels, restaurants and high-traffic venues. Hundreds of cups per day — zero compromise.</p>
+          <ul class="speclist">
+            <li><svg width="12" height="12"><use href="#ic-check"/></svg> 3-Group Configuration</li>
+            <li><svg width="12" height="12"><use href="#ic-check"/></svg> Extended Cup Shelf</li>
+            <li><svg width="12" height="12"><use href="#ic-check"/></svg> Stainless Steel Boilers</li>
+          </ul>
+          <a href="#contact" class="plink">Enquire Now <svg width="12" height="12"><use href="#ic-arrow"/></svg></a>
+        </div>
+      </div>
+
+      <div class="pcard reveal reveal-d1">
+        <div class="pcard-img">
+          <img src="https://images.unsplash.com/photo-1521302080334-4bebac2763a6?w=600&q=80&fit=crop" alt="Office Machine" loading="lazy"/>
+        </div>
+        <div class="pcard-body">
+          <h3>Office &amp; Workspace</h3>
+          <p>Compact yet powerful. Keep your team fuelled with barista-quality coffee all day long.</p>
+          <ul class="speclist">
+            <li><svg width="12" height="12"><use href="#ic-check"/></svg> Touch Display Interface</li>
+            <li><svg width="12" height="12"><use href="#ic-check"/></svg> Multi-User Profiles</li>
+            <li><svg width="12" height="12"><use href="#ic-check"/></svg> Low Maintenance</li>
+          </ul>
+          <a href="#contact" class="plink">Enquire Now <svg width="12" height="12"><use href="#ic-arrow"/></svg></a>
+        </div>
+      </div>
+
+      <div class="pcard reveal reveal-d2">
+        <div class="pcard-img">
+          <img src="https://images.unsplash.com/photo-1611854779393-1b2da9d400fe?w=600&q=80&fit=crop" alt="Cold Brew" loading="lazy"/>
+          <span class="pbadge">New Arrival</span>
+        </div>
+        <div class="pcard-body">
+          <h3>Cold Brew &amp; Specialty</h3>
+          <p>Elevate your menu with cold brew and specialty beverage systems for modern spaces.</p>
+          <ul class="speclist">
+            <li><svg width="12" height="12"><use href="#ic-check"/></svg> Cold Brew Optimised</li>
+            <li><svg width="12" height="12"><use href="#ic-check"/></svg> Nitrogen Infusion Ready</li>
+            <li><svg width="12" height="12"><use href="#ic-check"/></svg> Custom Menu Design</li>
+          </ul>
+          <a href="#contact" class="plink">Enquire Now <svg width="12" height="12"><use href="#ic-arrow"/></svg></a>
+        </div>
+      </div>
+
+      <div class="pcard pcard--cta reveal reveal-d3">
+        <div class="pcta-inner">
+          <div class="pcta-icon"><svg width="34" height="34"><use href="#ic-coffee"/></svg></div>
+          <h3>Not Sure Which Machine?</h3>
+          <p>Our experts analyse your volume, space, and budget to recommend the perfect fit for your business.</p>
+          <a href="#contact" class="btn btn-red btn-sm">
+            Free Consultation <svg width="14" height="14"><use href="#ic-arrow"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ WHY US ══ -->
+<section class="whyus" id="why-us">
+  <div class="whyus-grain"></div>
+  <div class="container whyus-grid">
+
+    <div class="wu-left reveal">
+      <span class="eyebrow light">Why Choose Us</span>
+      <h2 class="light">The Ideal Difference:<br /><em>Where Craft<br />Meets Commerce</em></h2>
+      <p>We don't just sell machines — we build long-term partnerships. From consultation to installation to ongoing support, we're with you at every step.</p>
+      <a href="#contact" class="btn btn-red mt32">
+        Start Your Journey <svg width="15" height="15"><use href="#ic-arrow"/></svg>
+      </a>
+      <div class="wu-imgbox">
+        <img src="https://images.unsplash.com/photo-1453614512568-c4024d13c247?w=500&q=80&fit=crop" alt="Barista" loading="lazy"/>
+        <div class="wu-img-label">
+          <svg width="13" height="13"><use href="#ic-check"/></svg>
+          Expert-led training included
+        </div>
+      </div>
+    </div>
+
+    <div class="wu-right">
+      <div class="fcard reveal">
+        <div class="fcard-ic"><svg width="20" height="20"><use href="#ic-wrench"/></svg></div>
+        <div><h4>Expert Installation &amp; Training</h4><p>Certified technicians handle end-to-end installation with on-site barista training for a perfect launch from day one.</p></div>
+      </div>
+      <div class="fcard reveal reveal-d1">
+        <div class="fcard-ic"><svg width="20" height="20"><use href="#ic-wifi"/></svg></div>
+        <div><h4>IoT &amp; Smart Connectivity</h4><p>Monitor machine health, track consumption, receive maintenance alerts, and control brews remotely via our mobile app.</p></div>
+      </div>
+      <div class="fcard reveal reveal-d2">
+        <div class="fcard-ic"><svg width="20" height="20"><use href="#ic-clock"/></svg></div>
+        <div><h4>24/7 Customer Support</h4><p>Round-the-clock technical support. Your revenue depends on uptime — we treat every issue with urgency.</p></div>
+      </div>
+      <div class="fcard reveal reveal-d1">
+        <div class="fcard-ic"><svg width="20" height="20"><use href="#ic-pen"/></svg></div>
+        <div><h4>Customised Coffee Menu</h4><p>Industry experts design a bespoke menu calibrated to your brand, customer base, and seasonal demand — for free.</p></div>
+      </div>
+      <div class="fcard reveal reveal-d2">
+        <div class="fcard-ic"><svg width="20" height="20"><use href="#ic-shield"/></svg></div>
+        <div><h4>Comprehensive Warranty</h4><p>All machines come with a full warranty backed by genuine spare parts and service centres across India.</p></div>
+      </div>
+      <div class="fcard reveal reveal-d3">
+        <div class="fcard-ic"><svg width="20" height="20"><use href="#ic-chart"/></svg></div>
+        <div><h4>ROI-Focused Approach</h4><p>We calculate your cost-per-cup and project revenue uplift — ensuring your investment pays for itself fast.</p></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ INDUSTRIES ══ -->
+<section class="industries" id="industries">
+  <div class="container">
+    <div class="sec-hd reveal">
+      <span class="eyebrow">Industries We Serve</span>
+      <h2>The Right Machine for<br /><em>Every Environment</em></h2>
+      <p>From boutique cafes to five-star hotels — we understand the unique demands of every sector.</p>
+    </div>
+    <div class="ind-grid">
+      <div class="icard reveal" style="--bg:url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=700&q=75&fit=crop')">
+        <div class="icard-ov"></div>
+        <div class="icard-body">
+          <div class="icard-ic"><svg width="22" height="22"><use href="#ic-coffee"/></svg></div>
+          <h3>Cafés &amp; Coffee Shops</h3>
+          <p>Specialty espresso with E61 heads and PID control for the artisan experience customers crave.</p>
+        </div>
+      </div>
+      <div class="icard reveal reveal-d1" style="--bg:url('https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=700&q=75&fit=crop')">
+        <div class="icard-ov"></div>
+        <div class="icard-body">
+          <div class="icard-ic"><svg width="22" height="22"><use href="#ic-hotel"/></svg></div>
+          <h3>Hotels &amp; Resorts</h3>
+          <p>High-volume, luxury machines for lobbies, in-room service, and all-day dining.</p>
+        </div>
+      </div>
+      <div class="icard reveal reveal-d2" style="--bg:url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=700&q=75&fit=crop')">
+        <div class="icard-ov"></div>
+        <div class="icard-body">
+          <div class="icard-ic"><svg width="22" height="22"><use href="#ic-briefcase"/></svg></div>
+          <h3>Corporate Offices</h3>
+          <p>Smart, scalable coffee solutions from 20 to 2,000 employees — zero compromise.</p>
+        </div>
+      </div>
+      <div class="icard reveal reveal-d1" style="--bg:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=700&q=75&fit=crop')">
+        <div class="icard-ov"></div>
+        <div class="icard-body">
+          <div class="icard-ic"><svg width="22" height="22"><use href="#ic-utensils"/></svg></div>
+          <h3>Restaurants &amp; Fine Dining</h3>
+          <p>Exceptional post-meal coffee as elegant as the cuisine you serve.</p>
+        </div>
+      </div>
+      <div class="icard reveal reveal-d2" style="--bg:url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=700&q=75&fit=crop')">
+        <div class="icard-ov"></div>
+        <div class="icard-body">
+          <div class="icard-ic"><svg width="22" height="22"><use href="#ic-tent"/></svg></div>
+          <h3>Events &amp; Catering</h3>
+          <p>Portable commercial machines for large-scale events and catering. Volume without compromise.</p>
+        </div>
+      </div>
+      <div class="icard reveal reveal-d3" style="--bg:url('https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?w=700&q=75&fit=crop')">
+        <div class="icard-ov"></div>
+        <div class="icard-body">
+          <div class="icard-ic"><svg width="22" height="22"><use href="#ic-store"/></svg></div>
+          <h3>Retail &amp; Convenience</h3>
+          <p>Self-serve solutions for supermarkets and retail outlets with minimal staffing needs.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TESTIMONIALS ══ -->
+<section class="testi" id="testimonials">
+  <div class="container">
+    <div class="sec-hd reveal">
+      <span class="eyebrow">Client Stories</span>
+      <h2>What Our Clients Say About<br /><em>The Ideal Experience</em></h2>
+    </div>
+    <div class="tslider" id="tSlider">
+      <div class="tcard active">
+        <div class="tcard-q">&ldquo;</div>
+        <p>We've been using Ideal Coffee Machines at our flagship cafe for two years. The espresso consistency is remarkable, and their after-sales support is genuinely world-class. Every query, responded to within the hour.</p>
+        <div class="tcard-ft">
+          <div class="tav">RK</div>
+          <div class="tmeta"><strong>Rajiv Kapoor</strong><span>Founder, The Brew Theory, Mumbai</span></div>
+          <div class="tstars">
+            <svg width="12" height="12"><use href="#ic-star"/></svg><svg width="12" height="12"><use href="#ic-star"/></svg><svg width="12" height="12"><use href="#ic-star"/></svg><svg width="12" height="12"><use href="#ic-star"/></svg><svg width="12" height="12"><use href="#ic-star"/></svg>
+          </div>
+        </div>
+      </div>
+      <div class="tcard">
+        <div class="tcard-q">&ldquo;</div>
+        <p>As a 5-star hotel, our standards are non-negotiable. Ideal Coffee Machines understood our requirements perfectly — elegant, durable, and the IoT monitoring has completely transformed our F&amp;B operations.</p>
+        <div class="tcard-ft">
+          <div class="tav">PS</div>
+          <div class="tmeta"><strong>Priya Sharma</strong><span>F&amp;B Director, Grand Heritage Hotel, Delhi</span></div>
+          <div class="tstars">
+            <svg width="12" height="12"><use href="#ic-star"/></svg><svg width="12" height="12"><use href="#ic-star"/></svg><svg width="12" height="12"><use href="#ic-star"/></svg><svg width="12" height="12"><use href="#ic-star"/></svg><svg width="12" height="12"><use href="#ic-star"/></svg>
+          </div>
+        </div>
+      </div>
+      <div class="tcard">
+        <div class="tcard-q">&ldquo;</div>
+        <p>We equipped our entire 1,200-person campus with their machines. ROI was evident within the first quarter — employees are happier, the quality beats any chain, and maintenance has been virtually zero hassle.</p>
+        <div class="tcard-ft">
+          <div class="tav">AV</div>
+          <div class="tmeta"><strong>Arjun Verma</strong><span>Operations Head, TechPark India, Bengaluru</span></div>
+          <div class="tstars">
+            <svg width="12" height="12"><use href="#ic-star"/></svg><svg width="12" height="12"><use href="#ic-star"/></svg><svg width="12" height="12"><use href="#ic-star"/></svg><svg width="12" height="12"><use href="#ic-star"/></svg><svg width="12" height="12"><use href="#ic-star"/></svg>
+          </div>
+        </div>
+      </div>
+      <div class="tcard">
+        <div class="tcard-q">&ldquo;</div>
+        <p>The custom coffee menu they designed is a hit with guests. Their expertise in menu engineering was unexpected but absolutely invaluable — it's become a talking point for our restaurant.</p>
+        <div class="tcard-ft">
+          <div class="tav">NM</div>
+          <div class="tmeta"><strong>Neha Mehta</strong><span>Owner, Spice Route Restaurant, Pune</span></div>
+          <div class="tstars">
+            <svg width="12" height="12"><use href="#ic-star"/></svg><svg width="12" height="12"><use href="#ic-star"/></svg><svg width="12" height="12"><use href="#ic-star"/></svg><svg width="12" height="12"><use href="#ic-star"/></svg><svg width="12" height="12"><use href="#ic-star"/></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tdots" id="tDots">
+      <button class="tdot active" data-index="0"></button>
+      <button class="tdot" data-index="1"></button>
+      <button class="tdot" data-index="2"></button>
+      <button class="tdot" data-index="3"></button>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA / CONTACT ══ -->
+<section class="ctasec" id="contact">
+  <div class="ctasec-grain"></div>
+  <div class="container cta-grid">
+    <div class="cta-left reveal">
+      <span class="eyebrow light">Ready to Upgrade?</span>
+      <h2 class="light">Let's Find the Perfect Machine<br /><em>for Your Business</em></h2>
+      <p>Tell us about your business and we'll recommend the ideal solution — with a full cost-per-cup analysis, free installation, and ongoing support.</p>
+      <div class="cta-checks">
+        <span><svg width="13" height="13"><use href="#ic-check"/></svg> Free Consultation</span>
+        <span><svg width="13" height="13"><use href="#ic-check"/></svg> No Commitment Required</span>
+        <span><svg width="13" height="13"><use href="#ic-check"/></svg> Response Within 24hrs</span>
+      </div>
+    </div>
+    <form class="ctaform reveal reveal-d1" id="contactForm" novalidate>
+      <div class="form-row">
+        <div class="fg"><label>Full Name <em>*</em></label><input type="text" name="name" placeholder="Your name" required /></div>
+        <div class="fg"><label>Business Name <em>*</em></label><input type="text" name="business" placeholder="Your business" required /></div>
+      </div>
+      <div class="form-row">
+        <div class="fg"><label>Email Address <em>*</em></label><input type="email" name="email" placeholder="you@email.com" required /></div>
+        <div class="fg"><label>Phone Number</label><input type="tel" name="phone" placeholder="+91 98765 43210" /></div>
+      </div>
+      <div class="fg">
+        <label>Type of Business</label>
+        <select name="industry">
+          <option value="">Select your industry...</option>
+          <option>Café / Coffee Shop</option>
+          <option>Hotel / Resort</option>
+          <option>Corporate Office</option>
+          <option>Restaurant / Fine Dining</option>
+          <option>Events / Catering</option>
+          <option>Retail / Convenience</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="fg">
+        <label>Tell Us More</label>
+        <textarea name="message" rows="3" placeholder="Daily cups needed, location, timeline..."></textarea>
+      </div>
+      <button type="submit" class="btn btn-red btn-full" id="submitBtn">
+        <span class="bt">Request Free Quote <svg width="15" height="15"><use href="#ic-arrow"/></svg></span>
+        <span class="bl" style="display:none">Sending…</span>
+      </button>
+      <div class="form-ok" id="formOk" style="display:none">
+        <svg width="15" height="15"><use href="#ic-check"/></svg> Thank you! We'll be in touch within 24 hours.
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <a href="#" class="logo footer-logo">
+        <img src="https://idealcoffeemachines.com/images/logo-light.png" alt="Ideal Coffee Machines" class="logo-img" />
+      </a>
+      <p>Premium commercial coffee machines for businesses that refuse to compromise on quality. Serving India's finest cafes, hotels, and offices.</p>
+      <div class="fsoc">
+        <a href="#" aria-label="Instagram"><svg width="16" height="16"><use href="#ic-instagram"/></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg width="16" height="16"><use href="#ic-linkedin"/></svg></a>
+        <a href="#" aria-label="YouTube"><svg width="16" height="16"><use href="#ic-youtube"/></svg></a>
+      </div>
+    </div>
+    <div class="fcol">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#products">Our Machines</a></li>
+        <li><a href="#industries">Industries</a></li>
+        <li><a href="#why-us">Why Choose Us</a></li>
+        <li><a href="#testimonials">Client Stories</a></li>
+        <li><a href="#contact">Get a Quote</a></li>
+      </ul>
+    </div>
+    <div class="fcol">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#">Machine Sales</a></li>
+        <li><a href="#">Installation &amp; Setup</a></li>
+        <li><a href="#">Barista Training</a></li>
+        <li><a href="#">Coffee Menu Design</a></li>
+        <li><a href="#">Maintenance &amp; AMC</a></li>
+        <li><a href="#">IoT Dashboard</a></li>
+      </ul>
+    </div>
+    <div class="fcol">
+      <h4>Contact Us</h4>
+      <ul class="fcontact">
+        <li><svg width="13" height="13"><use href="#ic-phone"/></svg> +91 98765 43210</li>
+        <li><svg width="13" height="13"><use href="#ic-mail"/></svg> info@idealcoffeemachines.com</li>
+        <li><svg width="13" height="13"><use href="#ic-pin"/></svg> Mumbai, India — Serving Pan-India</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-btm">
+    <div class="container footer-btm-inner">
+      <p>&copy; 2025 Ideal Coffee Machines. All rights reserved.</p>
+      <p><a href="#">Privacy Policy</a> &middot; <a href="#">Terms of Service</a> &middot; <a href="#">Sitemap</a></p>
+    </div>
+  </div>
+</footer>
+
+<button class="btt" id="btt" aria-label="Back to top">
+  <svg width="18" height="18"><use href="#ic-up"/></svg>
+</button>
+
+<script src="./app.js"></script>
+</body>
+</html>
