@@ -353,6 +353,14 @@ em { font-style: italic; font-family: var(--font-display); font-weight: 400; }
   .nav-links, .nav-cta { display: none; }
   .nav-burger { display: flex; }
   /* .nav { top: 32px; } */
+  .nav-inner {
+      width: var(--container);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      align-items: center;
+  }
 }
 
 /* ======================================================
