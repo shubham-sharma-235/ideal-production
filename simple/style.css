@@ -7,7 +7,8 @@
      Dark footer only: #1c0e08
    Fonts: Cormorant Garamond + Jost
    ================================================================ */
-
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+ 
 :root {
   /* Dark — footer ONLY */
   --ink:       #1c0e08;
@@ -45,8 +46,8 @@
   --sh-red:    0 6px 28px rgba(237,28,36,0.25);
 
   /* Typography */
-  --display:   'Cormorant Garamond', Georgia, serif;
-  --body:      'Jost', system-ui, sans-serif;
+  --display:   "Marcellus", serif;
+  --body:      "Poppins", sans-serif;
 
   --ease:      cubic-bezier(0.4, 0, 0.2, 1);
   --tr:        all 0.3s var(--ease);
