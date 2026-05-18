@@ -253,7 +253,7 @@ body::after {
 
 .hero__title {
   font-family: var(--serif);
-  font-size: clamp(42px, 8vw, 92px);
+  font-size: clamp(42px, 8vw, 62px);
   line-height: 1.03;
   letter-spacing: -.02em;
   margin-bottom: 26px;
@@ -631,7 +631,7 @@ body::after {
    ═══════════════════════════════════════════ */
 .clients-section { overflow: hidden; padding-bottom: calc(var(--gap) * .7) }
 .logo-marquee {
-  margin-top: 36px;
+  margin-top: 42px;
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
   mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
 }
@@ -641,8 +641,7 @@ body::after {
   width: max-content;
 }
 .logo-marquee__track img {
-  height: 32px; width: auto; flex-shrink: 0;
-  filter: grayscale(1) opacity(.3);
+  height: 132px; width: auto; flex-shrink: 0;
   transition: filter .4s, transform .4s var(--ease);
 }
 .logo-marquee__track img:hover {
