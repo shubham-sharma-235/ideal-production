@@ -526,7 +526,7 @@ body::after {
 .feature:hover::after { width: 100% }
 
 .feature__icon {
-  width: 44px; height: 44px;
+  width: 84px; height: 84px;
   border-radius: 10px; background: var(--gold-wash);
   display: flex; align-items: center; justify-content: center;
   margin-bottom: 16px; overflow: hidden;
@@ -534,7 +534,7 @@ body::after {
 }
 .feature:hover .feature__icon { transform: scale(1.15) rotate(-6deg) }
 .feature__icon img {
-  width: 24px; height: 24px; object-fit: contain;
+  width: 94px; height: 94px; object-fit: contain;
   filter: sepia(1) saturate(.4) hue-rotate(-10deg) brightness(.55);
 }
 .feature__num {

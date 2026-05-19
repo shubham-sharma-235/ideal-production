@@ -36,6 +36,7 @@
   }
 
   animateMarquee();
+  
   /* Burger / Drawer */
   const burger = document.getElementById("burger");
   const drawer = document.getElementById("drawer");

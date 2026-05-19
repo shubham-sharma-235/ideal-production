@@ -919,11 +919,9 @@ body::after {
   width: auto;
   flex-shrink: 0;
   transition:
-    filter 0.4s,
     transform 0.4s var(--ease);
 }
 .logo-marquee__track img:hover {
-  filter: grayscale(0) opacity(1);
   transform: scale(1.12);
 }
 
