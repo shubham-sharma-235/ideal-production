@@ -516,8 +516,8 @@ body::after {
   color: #fff;
 }
 .ribbon__stat small {
-  font-size: 0.36em;
-  color: var(--gold-p);
+  font-size: 1.6em;
+  color: #fafaf7;
   margin-left: 2px;
   vertical-align: super;
   font-family: var(--sans);
