@@ -15,7 +15,7 @@
   --gold-glow: rgba(139,115,85,.22);
 
   --bg: #FAF9F6;
-  --bg-warm: #F4F1EB;
+  --bg-warm: #FFF8F0;
   --bg-cream: #EFECE5;
   --white: #FFFFFF;
 
@@ -526,16 +526,14 @@ body::after {
 .feature:hover::after { width: 100% }
 
 .feature__icon {
-  width: 84px; height: 84px;
+  width: 144px; height: 144px;
   border-radius: 10px; background: var(--gold-wash);
   display: flex; align-items: center; justify-content: center;
   margin-bottom: 16px; overflow: hidden;
   transition: transform .5s var(--bounce);
 }
-.feature:hover .feature__icon { transform: scale(1.15) rotate(-6deg) }
 .feature__icon img {
-  width: 94px; height: 94px; object-fit: contain;
-  filter: sepia(1) saturate(.4) hue-rotate(-10deg) brightness(.55);
+  width: 164px; height: 164px; object-fit: contain;
 }
 .feature__num {
   font-size: 10px; font-weight: 600;

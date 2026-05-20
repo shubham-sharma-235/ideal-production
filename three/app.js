@@ -20,22 +20,91 @@
   onScroll();
 
   /* logo marquee */
-  const marqueeTrack = document.querySelector(".logo-marquee__track");
+    const slider = document.getElementById("clSlider");
 
-  let scrollAmount = 0;
-  let speed = 1; // increase for faster speed
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+  let auto = 0;
 
-  function animateMarquee() {
-    scrollAmount += speed;
-    // Half width because logos are duplicated
-    if (scrollAmount >= marqueeTrack.scrollWidth / 2) {
-      scrollAmount = 0;
+  /* AUTO SCROLL */
+  function autoSlide(){
+
+    if(!isDown){
+
+      auto += 0.7;
+
+      if(auto >= slider.scrollWidth / 2){
+        auto = 0;
+      }
+
+      slider.scrollLeft = auto;
     }
-    marqueeTrack.style.transform = `translateX(-${scrollAmount}px)`;
-    requestAnimationFrame(animateMarquee);
+
+    requestAnimationFrame(autoSlide);
   }
 
-  animateMarquee();
+  autoSlide();
+
+  /* DRAG */
+  slider.addEventListener("mousedown", (e) => {
+
+    isDown = true;
+
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+
+  });
+
+  slider.addEventListener("mouseleave", () => {
+    isDown = false;
+  });
+
+  slider.addEventListener("mouseup", () => {
+    isDown = false;
+  });
+
+  slider.addEventListener("mousemove", (e) => {
+
+    if(!isDown) return;
+
+    e.preventDefault();
+
+    const x = e.pageX - slider.offsetLeft;
+    const walk = (x - startX) * 2;
+
+    slider.scrollLeft = scrollLeft - walk;
+
+    auto = slider.scrollLeft;
+
+  });
+
+  /* TOUCH */
+  slider.addEventListener("touchstart", (e) => {
+
+    isDown = true;
+
+    startX = e.touches[0].pageX;
+    scrollLeft = slider.scrollLeft;
+
+  });
+
+  slider.addEventListener("touchend", () => {
+    isDown = false;
+  });
+
+  slider.addEventListener("touchmove", (e) => {
+
+    if(!isDown) return;
+
+    const x = e.touches[0].pageX;
+    const walk = (x - startX) * 2;
+
+    slider.scrollLeft = scrollLeft - walk;
+
+    auto = slider.scrollLeft;
+
+  });
   
   /* Burger / Drawer */
   const burger = document.getElementById("burger");
