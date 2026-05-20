@@ -383,6 +383,7 @@ body::after {
   font-family: var(--serif);
   font-size: clamp(30px, 5vw, 52px);
   line-height: 1.12; color: var(--ink);
+  font-weight: 100;
   margin-bottom: 16px; max-width: 16ch;
 }
 .section__desc {
