@@ -500,7 +500,8 @@ body::after {
 .features-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1px; background: var(--border-2);
+  gap: 1px;
+  /* background: var(--border-2); */
   border-radius: var(--radius); overflow: hidden;
   border: 1px solid var(--border-2);
 }
@@ -509,6 +510,8 @@ body::after {
 
 .feature {
   background: var(--white);
+  border-right: 1px solid var(--border-2);
+  border-top: 1px solid var(--border-2);
   padding: 28px 24px;
   position: relative;
   transition: all .4s var(--ease);
