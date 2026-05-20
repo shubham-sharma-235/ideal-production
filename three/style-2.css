@@ -537,7 +537,7 @@ body::after {
   transition: transform .5s var(--bounce);
 }
 .feature__icon img {
-  width: 164px; height: 164px; object-fit: contain;
+  width: 100px; height: 100px; object-fit: contain;
 }
 .feature__num {
   font-size: 10px; font-weight: 600;
