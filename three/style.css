@@ -15,7 +15,7 @@
   --bga: #f3f0ea;
   --bgc: #ebe7df;
   --w: #fff;
-  --ink: #2a2520;
+  --ink: #2a2520;.xp-sec
   --ink2: #5c554d;
   --ink3: #8a8279;
   --ink4: #b5afa7;
@@ -2058,13 +2058,11 @@ body::after {
 }
 .xp-sec {
   padding: 100px 6%;
-  background: var(--bg);
 }
 
 .xp-card {
   max-width: 1250px;
   margin: auto;
-  background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(18px);
   border: 1px solid var(--border);
   border-radius: 36px;
