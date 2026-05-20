@@ -483,6 +483,9 @@ body::after {
 /* ═══════════════════════════════════════════
    FEATURES
    ═══════════════════════════════════════════ */
+#trust .wrap {
+  min-width: 1300px;
+}
 .craft-header {
   display: grid; grid-template-columns: 1fr 1fr;
   gap: 48px; align-items: center; margin-bottom: 56px;
@@ -500,7 +503,7 @@ body::after {
 
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 1px;
   /* background: var(--border-2); */
   border-radius: var(--radius); overflow: hidden;
@@ -631,9 +634,9 @@ body::after {
 /* ═══════════════════════════════════════════
    CLIENTS
    ═══════════════════════════════════════════ */
-.clients-section { overflow: hidden; padding-bottom: calc(var(--gap) * .7) }
+.clients-section { overflow: hidden; padding-bottom: 1rem!important;}
 .logo-marquee {
-  margin-top: 42px;
+  margin-top: 12px;
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
   mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
 }
