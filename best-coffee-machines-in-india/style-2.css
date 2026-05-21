@@ -484,7 +484,7 @@ body::after {
    FEATURES
    ═══════════════════════════════════════════ */
 #trust .wrap {
-  max-width: 1360px;
+  min-width: 1360px;
 }
 .craft-header {
   display: grid; grid-template-columns: 1fr 1fr;
