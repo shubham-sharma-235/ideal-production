@@ -910,7 +910,6 @@ body::after {
   width:220px;
   height:120px;
   flex-shrink:0;
-  border:1px solid var(--border);
   border-radius:26px;
   display:flex;
   align-items:center;
