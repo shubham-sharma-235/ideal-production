@@ -274,3 +274,39 @@ xpPopup.addEventListener("click", (e) => {
     xpPopup.classList.remove("active");
   }
 });
+
+/* =========================================================== */
+
+  const modal = $('#modal');
+  const modalForm = $('#modalForm');
+  if (modal) {
+    const shown = () => sessionStorage.getItem('icm-modal-shown') === '1';
+    const markShown = () => sessionStorage.setItem('icm-modal-shown', '1');
+
+    const openModal = () => {
+      if (shown()) return;
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden', 'false');
+      markShown();
+    };
+    const closeModal = () => {
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+    };
+
+    setTimeout(openModal, 2000);
+
+    document.addEventListener('mouseleave', e => {
+      if (e.clientY <= 0 && !shown()) openModal();
+    });
+
+    $$('[data-modal-close]', modal).forEach(el => el.addEventListener('click', closeModal));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+    if (modalForm) {
+      modalForm.addEventListener('submit', e => {
+        e.preventDefault();
+        modalForm.innerHTML = '<p style="margin:0;padding:16px;font-family:var(--font-display);font-size:18px;color:var(--red-700);">Thank you. Check your inbox.</p>';
+      });
+    }
+  }
