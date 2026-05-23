@@ -277,36 +277,42 @@ xpPopup.addEventListener("click", (e) => {
 
 /* =========================================================== */
 
-  const modal = $('#modal');
-  const modalForm = $('#modalForm');
-  if (modal) {
-    const shown = () => sessionStorage.getItem('icm-modal-shown') === '1';
-    const markShown = () => sessionStorage.setItem('icm-modal-shown', '1');
+(function(){
+  var popup = document.getElementById('popup');
+  var backdrop = document.getElementById('popupBackdrop');
+  var closeBtn = document.getElementById('popupClose');
+  var form = document.getElementById('popupForm');
+  var success = document.getElementById('popupSuccess');
 
-    const openModal = () => {
-      if (shown()) return;
-      modal.classList.add('open');
-      modal.setAttribute('aria-hidden', 'false');
-      markShown();
-    };
-    const closeModal = () => {
-      modal.classList.remove('open');
-      modal.setAttribute('aria-hidden', 'true');
-    };
-
-    setTimeout(openModal, 2000);
-
-    document.addEventListener('mouseleave', e => {
-      if (e.clientY <= 0 && !shown()) openModal();
-    });
-
-    $$('[data-modal-close]', modal).forEach(el => el.addEventListener('click', closeModal));
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
-
-    if (modalForm) {
-      modalForm.addEventListener('submit', e => {
-        e.preventDefault();
-        modalForm.innerHTML = '<p style="margin:0;padding:16px;font-family:var(--font-display);font-size:18px;color:var(--red-700);">Thank you. Check your inbox.</p>';
-      });
-    }
+  function openPopup(){
+    popup.classList.add('active');
+    document.body.style.overflow = 'hidden';
   }
+  window.openPopup = openPopup;
+
+  function closePopup(){
+    popup.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  closeBtn.addEventListener('click', closePopup);
+  backdrop.addEventListener('click', closePopup);
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closePopup(); });
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var valid = true;
+    var fields = form.querySelectorAll('[required]');
+    for(var i = 0; i < fields.length; i++){
+      if(!fields[i].value.trim()){ valid = false; fields[i].style.borderColor = '#C5503D'; }
+      else { fields[i].style.borderColor = ''; }
+    }
+    if(valid){
+      form.style.display = 'none';
+      success.hidden = false;
+    }
+  });
+
+  // Auto popup — every page load, after 3.5 seconds
+  setTimeout(openPopup, 3500);
+})();

@@ -128,18 +128,38 @@
       <body>
 
         <!-- POPUP MODAL -->
-        <div class="modal" id="modal" aria-hidden="true">
-          <div class="modal-backdrop" data-modal-close></div>
-          <div class="modal-card">
-            <button class="modal-close" data-modal-close aria-label="Close">×</button>
-            <span class="modal-eyebrow">Limited offer</span>
-            <h3 class="modal-title">Brew your <em>perfect</em> cup, on us.</h3>
-            <p class="modal-text">Book a complimentary studio consultation — and receive a curated tasting kit with your trial.</p>
-            <form class="modal-form" id="modalForm">
-              <input type="email" name="email" required placeholder="Your email" />
-              <button type="submit">Claim →</button>
+        <div class="popup" id="popup">
+          <div class="popup-backdrop" id="popupBackdrop"></div>
+          <div class="popup-card">
+            <button class="popup-close" id="popupClose" type="button" aria-label="Close">×</button>
+            <span class="popup-eyebrow">Get in Touch</span>
+            <h3 class="popup-title">Let's pour a <em>better</em> cup.</h3>
+            <p class="popup-desc">Leave your details — our Delhi team will reach out within one working day.</p>
+            <form class="popup-form" id="popupForm">
+              <div class="popup-field">
+                <label for="pp-name">Name</label>
+                <input id="pp-name" name="name" type="text" required placeholder="Your name"/>
+              </div>
+              <div class="popup-field">
+                <label for="pp-email">Email</label>
+                <input id="pp-email" name="email" type="email" required placeholder="you@example.com"/>
+              </div>
+              <div class="popup-field">
+                <label for="pp-phone">Phone Number</label>
+                <input id="pp-phone" name="phone" type="tel" required placeholder="+91"/>
+              </div>
+              <div class="popup-field">
+                <label for="pp-msg">Message</label>
+                <textarea id="pp-msg" name="message" rows="3" placeholder="Tell us about your café, hotel or space…"></textarea>
+              </div>
+              <button type="submit" class="popup-submit">
+                <span>Send Enquiry</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </button>
             </form>
-            <small class="modal-fine">No spam. Just better coffee.</small>
+            <div class="popup-success" id="popupSuccess" hidden>
+              <strong>Thank you.</strong> Our Delhi team will contact you shortly.
+            </div>
           </div>
         </div>
 
@@ -1196,11 +1216,7 @@
                   style="margin-top: 20px"
                   target="_blank"
                   rel="noopener"
-                  ><svg width="16" height="16" viewBox="0 0 24 24" fill="#fff">
-                    <path
-                      d="M17.5 14.4c-.3-.1-1.7-.8-2-.9s-.4-.1-.6.2-.7.9-.9 1.1c-.1.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.5-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.1c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.9 2.9 4.6 4 1.7.6 2.3.7 3.2.6.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.4zM12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.6 1.4 5.2L2 22l4.9-1.3c1.5.8 3.3 1.3 5.1 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2z"
-                    />
-                  </svg>
+                  ><img style="height: 2rem;" src="./icons/whatsapp.png" alt="">
                   WhatsApp Expert</a
                 >
               </div>
@@ -1298,11 +1314,7 @@
                 target="_blank"
                 rel="noopener"
                 class="btn btn-w"
-                ><svg width="16" height="16" viewBox="0 0 24 24" fill="#000">
-                  <path
-                    d="M17.5 14.4c-.3-.1-1.7-.8-2-.9s-.4-.1-.6.2-.7.9-.9 1.1c-.1.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.5-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.1c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.9 2.9 4.6 4 1.7.6 2.3.7 3.2.6.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.4zM12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.6 1.4 5.2L2 22l4.9-1.3c1.5.8 3.3 1.3 5.1 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2z"
-                  />
-                </svg>
+                ><img style="height: 2rem;" src="./icons/whatsapp.png" alt="">
                 WhatsApp Now</a
               ><a href="#contact" class="btn btn-w">Get Pricing →</a>
             </div>
@@ -1503,11 +1515,7 @@
           rel="noopener"
           class="wa-float"
           aria-label="WhatsApp"
-          ><svg viewBox="0 0 24 24" fill="#fff">
-            <path
-              d="M17.5 14.4c-.3-.1-1.7-.8-2-.9s-.4-.1-.6.2-.7.9-.9 1.1c-.1.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.5-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.1c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.9 2.9 4.6 4 1.7.6 2.3.7 3.2.6.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.4zM12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.6 1.4 5.2L2 22l4.9-1.3c1.5.8 3.3 1.3 5.1 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2z"
-            /></svg
-        ></a>
+          ><img style="height: 2rem;" src="./icons/whatsapp.png" alt=""></a>
         <button class="totop" id="topBtn" aria-label="Top">↑</button>
         <div class="mob-bar">
           <Call href="tel:+919694066660" class="mb-a">Call</a
@@ -1520,7 +1528,5 @@
           ><a href="https://idealcoffeemachines.com/contact" class="mb-a mob-cta">Book Demo →</a>
         </div>
         <script src="./app.js"></script>
-      </body>
-    </html>
   </body>
 </html>

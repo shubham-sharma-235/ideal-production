@@ -2028,20 +2028,21 @@ body::after {
 }
 @media (max-width: 768px) {
   .mob-bar {
-    display: flex;
+    display: none;
   }
   body {
     padding-bottom: 48px;
   }
   .wa-float {
-    bottom: 66px;
+    bottom: 20px;
     right: 12px;
+    left: 14px;
     width: 46px;
     height: 46px;
   }
   .totop {
-    bottom: 66px;
-    right: 70px;
+    bottom: 20px;
+    right: 18px;
     width: 36px;
     height: 36px;
   }
@@ -2507,113 +2508,116 @@ body::after {
 /* ======================================================
    MODAL
    ====================================================== */
-.modal {
-  position: fixed;
-  inset: 0;
-  z-index: 1000;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
+.popup{
+  position:fixed;inset:0;z-index:10000;
+  display:flex;align-items:center;justify-content:center;
+  padding:20px;
+  opacity:0;visibility:hidden;pointer-events:none;
+  transition:opacity .35s ease,visibility .35s ease;
 }
-.modal.open { display: flex; animation: modalIn .4s var(--ease-out); }
-.modal-backdrop {
-  position: absolute;
-  inset: 0;
-  background: rgba(26, 20, 16, 0.7);
-  backdrop-filter: blur(8px);
+.popup.active{opacity:1;visibility:visible;pointer-events:auto}
+
+.popup-backdrop{
+  position:absolute;inset:0;
+  background:rgba(20,17,14,.55);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  cursor:pointer;
 }
-.modal-card {
-  position: relative;
-  background: var(--cream-50);
-  border-radius: var(--r-lg);
-  padding: 56px 48px;
-  max-width: 480px;
-  width: 100%;
-  text-align: center;
-  box-shadow: 0 30px 80px rgba(0,0,0,0.3);
-  animation: modalCard .5s var(--ease-out);
+
+.popup-card{
+  position:relative;z-index:1;
+  width:100%;max-width:480px;
+  background:rgba(255,255,255,.96);
+  border:1px solid rgba(0,0,0,.06);
+  border-radius:20px;
+  padding:40px 36px;
+  box-shadow:0 32px 80px rgba(0,0,0,.18);
+  transform:translateY(24px) scale(.97);
+  transition:transform .4s cubic-bezier(.22,1,.36,1);
 }
-@keyframes modalIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+.popup.active .popup-card{transform:translateY(0) scale(1)}
+
+.popup-close{
+  position:absolute;top:14px;right:14px;
+  width:36px;height:36px;
+  border:none;border-radius:50%;
+  background:rgba(0,0,0,.04);
+  color:#2a2520;font-size:20px;line-height:1;
+  cursor:pointer;display:grid;place-items:center;
+  transition:background .25s;
 }
-@keyframes modalCard {
-  from { transform: translateY(40px) scale(0.96); opacity: 0; }
-  to { transform: translateY(0) scale(1); opacity: 1; }
+.popup-close:hover{background:rgba(0,0,0,.08)}
+
+.popup-eyebrow{
+  display:block;
+  font-family:'JetBrains Mono','Inter',monospace;
+  font-size:10px;font-weight:500;
+  letter-spacing:.2em;text-transform:uppercase;
+  color:var(--g);margin-bottom:12px;
 }
-.modal-close {
-  position: absolute;
-  top: 16px; right: 16px;
-  width: 36px; height: 36px;
-  font-size: 24px;
-  color: var(--ink-700);
-  border-radius: 50%;
-  transition: background .3s ease, color .3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+.popup-title{
+  font-family:'Fraunces',serif;
+  font-size:clamp(22px,3vw,28px);
+  font-weight:400;line-height:1.15;
+  color:#1a1714;margin-bottom:6px;
 }
-.modal-close:hover { background: var(--ink-900); color: var(--cream-50); }
-.modal-eyebrow {
-  display: inline-block;
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  color: var(--red-700);
-  padding: 4px 12px;
-  border: 1px solid var(--red-700);
-  border-radius: 100px;
-  margin-bottom: 24px;
+.popup-title em{font-family:'Fraunces',serif;font-style:italic;color:var(--g)}
+
+.popup-desc{
+  font-family:'Inter',sans-serif;
+  font-size:13px;color:#8a8279;
+  line-height:1.6;margin-bottom:24px;
 }
-.modal-title {
-  font-family: var(--font-grand);
-  font-size: 38px;
-  line-height: 1;
-  font-weight: 400;
-  margin: 0 0 16px;
-  color: var(--ink-900);
+
+.popup-form{display:flex;flex-direction:column;gap:14px}
+
+.popup-field{display:flex;flex-direction:column}
+.popup-field label{
+  font-family:'JetBrains Mono','Inter',monospace;
+  font-size: 12px;font-weight:500;
+  letter-spacing:.18em;text-transform:uppercase;
+  color:#111;margin-bottom:5px;
 }
-.modal-title em { color: var(--red-700); }
-.modal-text {
-  font-size: 15px;
-  line-height: 1.6;
-  color: var(--ink-600);
-  margin: 0 0 28px;
+.popup-field input,
+.popup-field textarea{
+  font-family:'Inter',sans-serif;
+  font-size:14px;color:#1a1714;
+  padding:12px 14px;
+  background:rgba(0,0,0,.02);
+  border:1px solid rgba(0,0,0,.08);
+  border-radius:10px;outline:none;
+  transition:border-color .3s,background .3s;
+  resize:none;
 }
-.modal-form {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 12px;
+.popup-field input:focus,
+.popup-field textarea:focus{border-color:var(--g);background:#fff}
+.popup-field input::placeholder,
+.popup-field textarea::placeholder{color:#c5c0b8}
+
+.popup-submit{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  width:100%;margin-top:6px;padding:14px 24px;
+  background:#1a1714;color:#fff;
+  border:none;border-radius:12px;
+  font-family:'Inter',sans-serif;
+  font-size:14px;font-weight:500;
+  cursor:pointer;transition:background .3s,transform .3s;
 }
-.modal-form input {
-  flex: 1;
-  padding: 14px 18px;
-  border: 1px solid rgba(26, 20, 16, 0.2);
-  border-radius: 100px;
-  font-family: var(--font-body);
-  font-size: 14px;
-  outline: none;
-  transition: border-color .3s ease;
+.popup-submit:hover{background:#8B7355;transform:translateY(-2px)}
+
+.popup-success{
+  text-align:center;padding:20px 0 4px;
+  font-family:'Inter',sans-serif;
+  font-size:14px;color:#5c554d;line-height:1.6;
 }
-.modal-form input:focus { border-color: var(--red-700); }
-.modal-form button {
-  padding: 14px 24px;
-  background: var(--red-700);
-  color: var(--cream-50);
-  border-radius: 100px;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  transition: background .3s ease;
+.popup-success strong{
+  font-family:'Fraunces',serif;
+  font-size:18px;color:#1a1714;
+  display:block;margin-bottom:4px;
 }
-.modal-form button:hover { background: var(--ink-900); }
-.modal-fine {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--ink-500);
+
+@media(max-width:540px){
+  .popup-card{padding:28px 22px;border-radius:16px}
+  .popup-title{font-size:22px}
 }
