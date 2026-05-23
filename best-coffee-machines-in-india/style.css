@@ -2621,3 +2621,7 @@ body::after {
   .popup-card{padding:28px 22px;border-radius:16px}
   .popup-title{font-size:22px}
 }
+
+form#contactForm {
+    width: 85%;
+}
